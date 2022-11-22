@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="coinApp.MainPage">
+
+    <StackLayout>
+        <ListView x:Name="coinListView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <!--<ImageCell Text="{Binding Name}"
+                               Detail="{Binding Price_usd, StringFormat='{}{0:c}'}"
+                               ImageSource="{Binding Icon_url}"/>-->
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="10,0,10,0">
+                            <Image Source="{Binding Icon_url}"/>
+                            <StackLayout Orientation="Vertical" Padding="0,0,0,0" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand">
+                                <Label Text="{Binding Name}"/>
+                                <Label Text="{Binding Asset_id}"/>
+                            </StackLayout>
+                            <Label Text="{Binding Price_usd, StringFormat='{}{0:c}'}" HorizontalOptions="End" VerticalOptions="CenterAndExpand"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button x:Name="RefreshButton" 
+                Clicked="RefreshButton_Clicked"
+                Text="Refresh"/>
+        <Button x:Name="AddCoin" 
+                Clicked="AddCoin_Clicked"
+                Text="Add a coin"/>
+    </StackLayout>
+
+</ContentPage>
