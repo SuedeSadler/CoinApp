@@ -19,6 +19,15 @@ namespace coinApp.Droid
                    typeof(Analytics), typeof(Crashes));
             base.OnCreate(savedInstanceState);
 
+            try
+            {
+                Crashes.GenerateTestCrash();
+            }
+            catch (Exception exception)
+            {
+                Crashes.TrackError(exception);
+            }
+
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());

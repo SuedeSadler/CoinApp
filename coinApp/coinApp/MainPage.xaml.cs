@@ -9,6 +9,7 @@ using Xamarin.Forms;
 using Newtonsoft.Json;
 using coinApp.Model;
 
+
 namespace coinApp
 {
     public partial class MainPage : ContentPage
@@ -21,6 +22,7 @@ namespace coinApp
         {
             InitializeComponent();
             coinListView.ItemsSource = GetCoins();
+            
         }
 
        
